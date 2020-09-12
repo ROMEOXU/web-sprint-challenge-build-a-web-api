@@ -16,10 +16,10 @@ const express = require('express');
 const server =  express();
 const projectsRouter = require('./routers/projectsRouter');
 const actionsRouter = require('./routers/actionsRouter');
-const port = process.env.PORT || 3100;
+const port = process.env.PORT || 4000;
 server.use(express.json());
 server.use('/api/projects',projectsRouter);
-// server.use('/api/actions',actionsRouter);
+server.use('/api/actions',actionsRouter);
 server.get('/',(req,res)=>{
     res.send(`<h1>Romeo passed the sprint challenge</h2>`)
 })

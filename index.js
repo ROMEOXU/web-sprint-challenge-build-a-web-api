@@ -22,7 +22,7 @@ server.use(express.json());
 server.use('/api/projects',projectsRouter);
 server.use('/api/actions',actionsRouter);
 server.get('/',(req,res)=>{
-    res.send(`<h1>Romeo passed the sprint challenge </h2>`)
+    res.send(`<h1>Romeo passed the sprint challenge ${process.env.COHORT} </h2>`)
 })
 server.listen(port,()=>{
     console.log(`web sprint is listening on ${port} `)
